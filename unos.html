@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Unos</title>
+</head>
+
+<body>
+<div class="container">
+<header>
+    <div class="datum">Subota, 24. Lipanj</div>
+    <h1>Balkanske V(ij)esti</h1>
+    
+    <nav class="navigacija">
+        <ul>
+          <li><a href="index.php" class="active">Naslovna</a></li>
+          <li><a href="kategorija.php?kategorija=hrvatska">Hrvatska</a></li>
+          <li><a href="kategorija.php?kategorija=srbija">Srbija</a></li>
+          <li><a href="unos.html">Administracija</a></li>
+        </ul>
+    </nav>
+</header>
+<hr class="linija">
+<div class="section-container">
+<section>
+    
+    
+    <h2>Unos novih vijesti</h2>
+    
+    <form class="forma" action="skripta.php" method="post" enctype="multipart/form-data" onsubmit="return validateForm()">
+        <div class="form-element">
+          <label for="naslov">Naslov vijesti:</label><br>
+          <input type="text" id="naslov" name="naslov"><br>
+          <span id="labelaNaslov" style="color:red;"></span>
+        </div>
+        
+        <div class="form-element">
+          <label for="sazetak">Sažetak vijesti:</label><br>
+          <textarea id="sazetak" name="sazetak" rows="4" cols="50"></textarea><br>
+          <span id="labelaSazetak" style="color:red;"></span>
+        </div>
+        
+        <div class="form-element">
+          <label for="tekst">Tekst vijesti:</label><br>
+          <textarea id="tekst" name="tekst" rows="4" cols="50"></textarea><br>
+          <span id="labelaTekst" style="color:red;"></span>
+        </div>
+        
+        <div class="form-element">
+          <label for="kategorija">Kategorija vijesti:</label><br>
+          <select id="kategorija" name="kategorija">
+            <option value="hrvatska">Hrvatska</option>
+            <option value="srbija">Srbija</option>
+          </select>
+        </div>
+        
+        <div class="form-element">
+          <label for="slika">Slika:</label><br>
+          <input
+            type="file"
+            accept="image/jpg,image/jpeg,image/png,image/gif"
+            id="slika"
+            name="slika"
+          /><br>
+          <span id="labelaSlika" style="color:red;"></span>
+        </div>
+        
+        <div class="form-element">
+          <input type="checkbox" id="prikazi" name="prikazi" value="da">
+          <label for="prikazi">Prikazati vijest na stranici</label>
+        </div>
+        
+        <div class="form-element">
+          <button type="reset" name="reset" class="dugme" value="Poništi">
+            Poništi
+          </button>
+          <button
+            type="submit"
+            name="submit"
+            class="dugme"
+            id="submit"
+            value="Pošalji"
+          >Pošalji</button>
+        </div>
+      </form>
+</section>
+<script type="text/javascript">
+  function validateForm() {
+    var slanjeForme = true;
+
+    // Naslov vijesti
+    var poljeNaslov = document.getElementById("naslov");
+    var naslov = document.getElementById("naslov").value;
+    if (naslov.length < 5 || naslov.length > 100) {
+      slanjeForme = false;
+      poljeNaslov.style.border = "2px dashed red";
+      document.getElementById("labelaNaslov").innerHTML =
+        "Naslov vijesti mora imati između 5 i 100 znakova!<br>";
+    } else {
+      poljeNaslov.style.border = "2px solid green";
+      document.getElementById("labelaNaslov").innerHTML = "";
+    }
+
+    // Kratki sažetak
+    var poljeSazetak = document.getElementById("sazetak");
+    var sazetak = document.getElementById("sazetak").value;
+    if (sazetak.length < 10 || sazetak.length > 255) {
+      slanjeForme = false;
+      poljeSazetak.style.border = "2px dashed red";
+      document.getElementById("labelaSazetak").innerHTML =
+        "Sažetak vijesti mora imati između 10 i 255 znakova!<br>";
+    } else {
+      poljeSazetak.style.border = "2px solid green";
+      document.getElementById("labelaSazetak").innerHTML = "";
+    }
+
+    // Tekst mora biti unesen
+    var poljeTekst = document.getElementById("tekst");
+    var tekst = document.getElementById("tekst").value;
+    if (tekst.length == 0) {
+      slanjeForme = false;
+      poljeTekst.style.border = "2px dashed red";
+      document.getElementById("labelaTekst").innerHTML =
+        "Tekst mora biti unesen!<br>";
+    } else {
+      poljeTekst.style.border = "2px solid green";
+      document.getElementById("labelaTekst").innerHTML = "";
+    }
+
+    // Slika mora biti unesena
+    var poljeSlika = document.getElementById("slika");
+    var slika = document.getElementById("slika").value;
+    if (slika.length == 0) {
+      slanjeForme = false;
+      poljeSlika.style.border = "2px dashed red";
+      document.getElementById("labelaSlika").innerHTML =
+        "Slika mora biti unesena!<br>";
+    } else {
+      poljeSlika.style.border = "2px solid green";
+      document.getElementById("labelaSlika").innerHTML = "";
+    }
+
+    return slanjeForme;
+  }
+</script>
+
+</div>
+<hr class="linija">
+<footer>
+    <p>© 2023 Bruno Jakoubek (bjakoubek@tvz.hr)</p>
+</footer>
+</div>
+
+</body>
+
+</html>

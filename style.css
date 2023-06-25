@@ -1,0 +1,196 @@
+@font-face {
+    font-family: "Merit";
+    src: url("Merit.ttf");
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    height:150px;
+    background-color: red;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.navigacija{
+    background-color: white;
+    width: 100%;
+    height: 100%;
+}
+
+.navigacija ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;  /* Vertically center the links */
+    list-style: none;
+    background-color: white;
+    padding: 0;
+    margin: 0;
+    height: 100%;  /* Take up full height of the navbar */
+    width: 90%;  /* Adjust this value as needed to leave some margin on the sides */
+    margin: auto;  /* Center the list in the navigation bar */
+}
+
+.navigacija ul li {
+    position: relative;  /* Enables absolute positioning for children */
+    padding: 0 150px;  /* Space around the link */
+}
+
+.navigacija ul li:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 50%;  /* Adjust to your liking */
+    width: 1px;
+    background: rgb(187, 187, 187);  /* The color of the line */
+}
+
+.navigacija ul a {
+    font-size:1.5em;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 0 20px;  /* Add horizontal padding for separation */
+    line-height: 50px;  /* Align the text vertically in the middle */
+}
+
+.slink{
+    text-decoration: none;
+    color: black;
+}
+.tetekst{
+    padding: 20px;
+}
+
+
+h1 {
+    font-family: "Merit";
+    color: white;
+    text-align: center;
+    font-size: 4em;
+}
+
+.datum {
+    color: white;
+    position: absolute;
+    bottom: 80px;
+    left: 10px;
+    padding: 10px;
+}
+
+.hhh {
+    padding: 15px;
+    font-size: larger;
+    text-align: left;
+    color:red;
+    width: 100%;
+    margin:10px;
+}
+.datumko{
+    font-size: 2em;
+    margin: 20px;
+}
+
+.linija{
+    color: grey;
+    width: 90%;
+    margin:40px;
+}
+
+footer{
+    text-align: left;
+    padding-top: 20px;
+}
+
+.form-element {
+    margin-bottom: 20px;
+}
+h2{
+    padding: 30px;
+
+}
+
+input[type=text], textarea, select, input[type=file] {
+    width: 80%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.dugme{
+    padding: 10px;
+}
+
+.section-container{
+    width: 90%;
+    padding-bottom:20px;
+}
+
+.image-container img{
+    width: 450px;
+    height: 300px;
+}
+.image-container{
+    width: 450px;
+    height: 300px;
+}
+.image-container2{
+    width: 450px;
+    height: 300px;
+}
+
+.clan article p, .clan2 article p{
+    font-weight: bold;
+    text-align: left;
+}
+
+.news article p {
+    text-align: left;
+    max-width: 396px;
+    max-height: 263px;
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+.news {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.container {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.opis{
+    font-size: 4em;
+}
+
+.sazetak{
+    font-weight: bold;
+    font-size: 2em;
+}
+
+.naslovcic{
+    font-size: 4em;
+}
